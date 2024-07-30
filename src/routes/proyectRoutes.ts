@@ -83,4 +83,12 @@ router.post('/:projectId/tasks/:taskId/status',
     handleInputErrors,
     TaskController.updateStatus
 )
+
+
+/**  Routes for teams* */
+router.post('/:projectId/team/find',
+    body('email')
+        .isEmail().toLowerCase().withMessage('Email no valido'),
+    handleInputErrors
+)
 export default router
